@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cvreview"
+version = "0.1.0"
+description = "Evidence-first candidate document review pipeline (Stage 1: packet ingestion & provenance)"
+requires-python = ">=3.12"
+dependencies = [
+    "pymupdf>=1.24",
+    "pydantic>=2.7",
+    "structlog>=24.1",
+    "typer>=0.12",
+    "pyyaml>=6.0",
+    "pillow>=10.0",
+    "pytesseract>=0.3.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+cvreview = "cvreview.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

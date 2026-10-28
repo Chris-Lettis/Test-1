@@ -1,0 +1,242 @@
+# =============================================================================
+# Criteria Register — DRAFT v0.1 (parsed from assessment-framework-draft-v0.1.md)
+# =============================================================================
+# STATUS: PROVISIONAL — NOT AUTHORISED.
+# This file is the Stage 0 draft produced for human review. Nothing in here may
+# drive assessment until the framework owner signs off and this file is copied
+# to criteria-register-v1.0.0.yaml with authorised_by completed.
+#
+# OPEN ITEMS FOR SIGN-OFF (owner must decide):
+#   S1. Weighting scheme: none supplied. Default below is unweighted bands +
+#       essential-gates. If relative weights are wanted, fill `weighting` per
+#       criterion and set weighting_scheme to weighted_mean_bands.
+#   S2. Partial band value: drafted as 1 (options: 1 or 2; 0 is forbidden —
+#       partial evidence is not failure).
+#   S3. Confirm cover letters are equal-status sources to CVs (default: yes).
+#   S4. Confirm E4 values list is complete and correctly spelled as the
+#       authorised values framework.
+# =============================================================================
+
+criteria_version: 0.1.0-draft
+source_documents:
+  - config/authorised-inputs/assessment-framework-draft-v0.1.md
+authorised_by: null            # MUST be set (name/role + date) at sign-off
+authorised_date: null
+weighting_scheme: unweighted_bands_plus_gates   # provisional; see open item S1
+
+# Default rubric: assessment class -> band (null = excluded from scoring, not 0)
+scoring_rubric:
+  STRONG_EVIDENCE: 4
+  EVIDENCE: 3
+  PARTIAL_EVIDENCE: 1          # open item S2
+  NO_EVIDENCE_FOUND: null
+  CONFLICTING_EVIDENCE: null
+  NOT_ASSESSABLE: null
+
+criteria:
+
+  - criterion_id: E1
+    description: >
+      Applied engineering problem solving: the ability to understand a technical
+      problem, develop or evaluate solutions, and apply engineering reasoning to
+      a practical challenge.
+    category: PROBLEM_SOLVING
+    essential: true
+    priority_note: Highest assessment priority per framework owner.
+    weighting: null             # see open item S1
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Multiple examples where the candidate identifies the problem, explains
+        their contribution or approach, and provides an outcome; evidence of
+        iteration, investigation, trade-offs or learning.
+      EVIDENCE: >
+        One clear example of tackling an engineering or technical problem and
+        applying knowledge to reach a solution.
+      PARTIAL_EVIDENCE: >
+        Participation in an engineering project is stated, but the candidate's
+        contribution or reasoning is unclear.
+      NO_EVIDENCE_FOUND: No applied problem-solving evidence located.
+    rationale: >
+      The specification explicitly asks for passion for design and problem
+      solving and application of skills to practical engineering challenges.
+
+  - criterion_id: E2
+    description: >
+      Design and making: genuine engagement with designing, developing, building
+      or improving something, physical or digital.
+    category: DESIGN_MAKE
+    essential: true
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Multiple examples of developing a design from problem/idea through
+        iteration, manufacture, implementation or testing.
+      EVIDENCE: One clear example of designing, building or developing something.
+      PARTIAL_EVIDENCE: >
+        Candidate says they enjoy design or lists design tools but gives no
+        applied example.
+      NO_EVIDENCE_FOUND: No design/development activity identified.
+    exclusions:
+      - >
+        Do NOT require CAD: this criterion intentionally excludes CAD as a
+        requirement (the placement teaches CATIA 3DX); CAD evidence is covered
+        by D1.
+    rationale: >
+      Reflects the role's emphasis on design while avoiding turning the desirable
+      CAD criterion into an accidental prerequisite.
+
+  - criterion_id: E3
+    description: >
+      Technical curiosity and learning: active learning, investigation or
+      experimentation beyond simply completing assigned tasks.
+    category: LEARNING_AGILITY
+    essential: true
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Multiple examples of independently learning something, investigating
+        alternatives, experimenting or applying new knowledge.
+      EVIDENCE: >
+        One clear example of independently learning or exploring a technical
+        subject.
+      PARTIAL_EVIDENCE: >
+        Claims curiosity, enthusiasm or willingness to learn without supporting
+        evidence.
+      NO_EVIDENCE_FOUND: Nothing identified.
+    rationale: >
+      The specification explicitly says curiosity and technical potential matter
+      more than prior motorsport interest.
+
+  - criterion_id: E4
+    description: >
+      Values evidence: concrete examples consistent with the authorised
+      behaviours Accountable, Brave, Competitive, Selfless. Evidence for all
+      four is not required from a CV; assess the strength of behavioural
+      evidence available.
+    category: VALUES_BEHAVIOURS
+    essential: true
+    weighting: null
+    authorised_values: [Accountable, Brave, Competitive, Selfless]   # open item S4
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Several concrete examples demonstrating different relevant behaviours,
+        with the candidate's contribution clear.
+      EVIDENCE: >
+        At least one convincing example of behaviour aligned with the stated
+        values.
+      PARTIAL_EVIDENCE: Values or characteristics are asserted but not demonstrated.
+      NO_EVIDENCE_FOUND: No relevant behavioural evidence.
+    rationale: >
+      The requirement to demonstrate how experience reflects Accountable, Brave,
+      Competitive and Selfless is explicitly essential in the specification.
+
+  - criterion_id: D1
+    description: >
+      Applied CAD / 3D design experience: has applied CAD, 3D modelling or
+      another design tool to produce or develop engineering designs.
+    category: TECHNICAL_SKILL
+    essential: false
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Recurring/substantial applied use across multiple projects, including
+        design development or iteration.
+      EVIDENCE: One clear project involving applied CAD/3D modelling.
+      PARTIAL_EVIDENCE: >
+        Software listed or proficiency self-declared without an applied example.
+      NO_EVIDENCE_FOUND: No evidence.
+    exclusions:
+      - >
+        Do NOT require CATIA specifically; any CAD/3D/design tool qualifies.
+        Self-declared proficiency without application caps at PARTIAL.
+    rationale: >
+      The specification asks for experience with CAD, 3D modelling or other
+      design tools and states CATIA 3DX proficiency is something candidates
+      will learn on placement.
+
+  - criterion_id: D2
+    description: >
+      Computational tools and process improvement: application of programming,
+      scripting, AI or other digital tools to solve a problem, automate work or
+      improve an engineering process.
+    category: DIGITAL_TOOLS
+    essential: false
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: Multiple applied examples and tangible improvement/outcome.
+      EVIDENCE: One clear applied example.
+      PARTIAL_EVIDENCE: Language/tool listed without an application.
+      NO_EVIDENCE_FOUND: No evidence.
+    rationale: >
+      Combines the programming, scripting, practical AI and engineering-process-
+      improvement elements already grouped together in the desirable criteria.
+
+  - criterion_id: D3
+    description: >
+      Team contribution and collaboration: effective contribution within a team,
+      including working with others towards a shared technical or practical
+      outcome.
+    category: TEAMWORK
+    essential: false
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Clear personal contribution plus evidence of working across roles/
+        disciplines or helping the wider team succeed.
+      EVIDENCE: Clear contribution to a collaborative project.
+      PARTIAL_EVIDENCE: Team membership stated without explaining their contribution.
+      NO_EVIDENCE_FOUND: Nothing located.
+    rationale: >
+      Maps to the stated desirable requirement for an adaptable, proactive and
+      collaborative approach and effective team contribution.
+
+  - criterion_id: D4
+    description: >
+      Analytical rigour and attention to detail: a methodical approach to
+      analysing, testing, validating or improving technical work.
+    category: ANALYTICAL_RIGOUR
+    essential: false
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Several concrete examples involving analysis/validation, with conclusions
+        or resulting decisions.
+      EVIDENCE: One clear analytical or validation example.
+      PARTIAL_EVIDENCE: >
+        Self-description such as "analytical" or "attention to detail" without an
+        example.
+      NO_EVIDENCE_FOUND: Nothing located.
+    rationale: >
+      Comes directly from the desirable criterion covering attention to detail
+      and an analytical and inquisitive approach.
+
+  - criterion_id: D5
+    description: >
+      Resilience, adaptability and improvement: effective response to setbacks,
+      changing requirements, unsuccessful approaches or feedback, and subsequent
+      learning or improvement.
+    category: RESILIENCE
+    essential: false
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Specific examples showing challenge/change, response and subsequent
+        improvement.
+      EVIDENCE: One credible example.
+      PARTIAL_EVIDENCE: >
+        Candidate describes themselves as resilient/adaptable without evidence.
+      NO_EVIDENCE_FOUND: Nothing located.
+    rationale: >
+      Combines the desirable requirements around adaptability, determination,
+      resilience and continuous improvement.
+
+# ---------------------------------------------------------------------------
+# Framework-level assessment policy (defaults applied unless overridden)
+# ---------------------------------------------------------------------------
+policy:
+  cover_letter_status: equal_source     # open item S3: letters count like CVs
+  missing_cover_letter: no_penalty      # packet metadata only, never an outcome
+  self_declared_proficiency: cap_at_partial   # listing/self-rating alone = PARTIAL
+  quantified_claims: recorded_not_privileged  # numbers don't add weight by themselves
+  sensitive_content: excluded           # redaction config, per plan §20
+  missing_evidence_rule: null_not_zero  # NO_EVIDENCE_FOUND never scores 0

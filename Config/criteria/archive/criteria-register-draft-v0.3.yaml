@@ -1,0 +1,335 @@
+# =============================================================================
+# Criteria Register — DRAFT v0.3 (owner decisions S3–S5 applied; S1–S2 pending)
+# =============================================================================
+# STATUS: PROVISIONAL — NOT AUTHORISED. Pending: owner confirmation of S1
+# (weighting proposal) and S2 (partial band value). On confirmation this file
+# is frozen as criteria-register-v1.0.0.yaml with authorised_by recorded.
+#
+# DECISION HISTORY
+#   2026-10-28  S3 = YES    Cover letters are equal-status evidence sources.
+#   2026-10-28  S4 = YES    E4 values list confirmed (verified vs spec verbatim).
+#   2026-10-28  S5 = REMOVE E5, G1, G2 rejected by owner (see spec_coverage
+#                          for the recorded consequence).
+#   2026-10-28  S1, S2      PROPOSALS tabled (see open_signoff_items) — awaiting
+#                          owner confirmation.
+#   2026-10-28  S6          Owner informed the criteria section is sufficient to
+#                          run CV assessment; optional items listed in plan.
+# =============================================================================
+
+criteria_version: 0.3.0-draft
+source_documents:
+  - config/authorised-inputs/assessment-framework-draft-v0.1.md
+  - config/authorised-inputs/Job-Specification.docx
+authorised_by: null            # MUST be set (name/role + date) at freeze
+authorised_date: null
+
+# --- OPEN SIGN-OFF ITEMS -----------------------------------------------------
+open_signoff_items:
+  S1_weighting:
+    proposal: two_tier_e1_weighted
+    detail:
+      E1: 3          # owner-designated "highest assessment priority"
+      E2: 2
+      E3: 2
+      E4: 2
+      D1: 1
+      D2: 1
+      D3: 1
+      D4: 1
+      D5: 1
+    rationale: >
+      Honours the owner's explicit statement that E1 is the top discriminator;
+      keeps desirables meaningful but secondary. Fully transparent: weights are
+      published in the register and shown on every score.
+    alternative: unweighted_bands_plus_gates (all banded criteria weight 1)
+  S2_partial_band:
+    proposal: 2
+    rationale: >
+      Even spacing on the 4-point ladder (4,3,2). The framework's own PARTIAL
+      definitions ("participation stated but contribution unclear", "software
+      listed without applied example") describe a real, checkable signal —
+      meaningfully more than nothing — so it earns credit closer to EVIDENCE
+      than to exclusion.
+    alternative: 1  (partial barely above excluded)
+
+# --- RESOLVED SIGN-OFF ITEMS -------------------------------------------------
+resolved_signoff_items:
+  S3_cover_letter_status: equal_source
+  S4_values_list_confirmed: [Accountable, Brave, Competitive, Selfless]
+  S5_proposed_additions: REJECTED_BY_OWNER    # E5, G1, G2 removed; see below
+  S6_spec_completeness: >
+    Owner informed; criteria section deemed sufficient for CV assessment.
+
+weighting_scheme: PENDING_S1     # becomes two_tier_e1_weighted or unweighted on freeze
+
+# Default rubric: assessment class -> band (null = excluded from scoring, not 0)
+scoring_rubric:
+  STRONG_EVIDENCE: 4
+  EVIDENCE: 3
+  PARTIAL_EVIDENCE: PENDING_S2  # owner proposal: 2 (alternative: 1); 0 forbidden
+  NO_EVIDENCE_FOUND: null
+  CONFLICTING_EVIDENCE: null
+  NOT_ASSESSABLE: null
+
+# -----------------------------------------------------------------------------
+# Spec coverage matrix (verified 2026-10-28; updated for S5 decision)
+# -----------------------------------------------------------------------------
+spec_coverage:
+  spec_essentials:
+    "Be enrolled on an eligible degree course, with at least one year remaining…":
+      covered: NOT_ASSESSED_BY_OWNER_DECISION
+      note: >
+        Owner rejected proposed gate G1 on 2026-10-28. The system will not check
+        or score enrolment eligibility; recorded here so later reviewers can see
+        this was a deliberate authorisation decision, not an oversight.
+    "Have a strong background in an engineering discipline, with excellent skills in Mathematics and Physics.":
+      covered: NOT_ASSESSED_BY_OWNER_DECISION
+      note: >
+        Owner rejected proposed criterion E5 on 2026-10-28. No system criterion
+        assesses engineering background or Maths/Physics skills. Recorded
+        deliberately as above.
+    "Have a passion for design and problem solving, and be excited by the opportunity to apply your skills…":
+      covered: yes         # → E1, E2
+    "Be able to work from our campus in Brackley, United Kingdom, for the duration of the placement.":
+      covered: NOT_ASSESSED_BY_OWNER_DECISION
+      note: Owner rejected proposed gate G2 on 2026-10-28.
+    "Demonstrate how your experiences … reflect our shared values: Accountable, Brave, Competitive and Selfless":
+      covered: yes         # → E4 (values list verified vs spec)
+  spec_desirables:
+    "Experience using CAD, 3D modelling or other design tools.": covered: yes    # → D1
+    "Programming, scripting, practical use of AI tools, or experience improving engineering processes.":
+      covered: yes         # → D2
+    "An adaptable, proactive and collaborative approach, with the ability to contribute effectively in a team environment.":
+      covered: yes         # → D3
+    "Keen attention to detail, with an analytical and inquisitive approach.":
+      covered: yes         # → D4 (inquisitive also supported by E3)
+    "Determination and resilience when facing challenges, with an interest in continuous improvement.":
+      covered: yes         # → D5
+  spec_negative_constraints:
+    - >
+      "A prior interest in motorsport is not required: we are more interested in
+      your curiosity, technical potential and motivation…" — recorded as an
+      explicit NON-criterion. Assessors/prompts must not reward or penalise
+      motorsport interest.
+  spec_non_criteria:
+    - >
+      "Key skills you will learn on placement" (CAD CATIA 3DX, F1 Technical
+      Regulations, Design Process, Idea Development, Team Collaboration, Time
+      Management, Adaptability) are placement LEARNING OUTCOMES, not assessment
+      criteria. They inform evidence_expectation wording only and are never
+      scored.
+
+criteria:
+
+  - criterion_id: E1
+    description: >
+      Applied engineering problem solving: the ability to understand a technical
+      problem, develop or evaluate solutions, and apply engineering reasoning to
+      a practical challenge.
+    category: PROBLEM_SOLVING
+    essential: true
+    priority_note: Highest assessment priority per framework owner (reflected in proposed S1 weight 3).
+    spec_source: "Have a passion for design and problem solving, and be excited by the opportunity to apply your skills and understanding to practical engineering challenges."
+    weighting: null             # set at freeze per S1
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Multiple examples where the candidate identifies the problem, explains
+        their contribution or approach, and provides an outcome; evidence of
+        iteration, investigation, trade-offs or learning.
+      EVIDENCE: >
+        One clear example of tackling an engineering or technical problem and
+        applying knowledge to reach a solution.
+      PARTIAL_EVIDENCE: >
+        Participation in an engineering project is stated, but the candidate's
+        contribution or reasoning is unclear.
+      NO_EVIDENCE_FOUND: No applied problem-solving evidence located.
+    rationale: >
+      Spec essential criterion (verbatim coverage confirmed).
+
+  - criterion_id: E2
+    description: >
+      Design and making: genuine engagement with designing, developing, building
+      or improving something, physical or digital.
+    category: DESIGN_MAKE
+    essential: true
+    spec_source: "Have a passion for design and problem solving… (design emphasis)"
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Multiple examples of developing a design from problem/idea through
+        iteration, manufacture, implementation or testing.
+      EVIDENCE: One clear example of designing, building or developing something.
+      PARTIAL_EVIDENCE: >
+        Candidate says they enjoy design or lists design tools but gives no
+        applied example.
+      NO_EVIDENCE_FOUND: No design/development activity identified.
+    exclusions:
+      - >
+        Do NOT require CAD: this criterion intentionally excludes CAD as a
+        requirement (the placement teaches CATIA 3DX); CAD evidence is covered
+        by D1.
+    rationale: >
+      Reflects the role's emphasis on design while avoiding turning the desirable
+      CAD criterion into an accidental prerequisite.
+
+  - criterion_id: E3
+    description: >
+      Technical curiosity and learning: active learning, investigation or
+      experimentation beyond simply completing assigned tasks.
+    category: LEARNING_AGILITY
+    essential: true
+    spec_source: "A prior interest in motorsport is not required: we are more interested in your curiosity, technical potential and motivation to work in a high-performance engineering environment."
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Multiple examples of independently learning something, investigating
+        alternatives, experimenting or applying new knowledge.
+      EVIDENCE: >
+        One clear example of independently learning or exploring a technical
+        subject.
+      PARTIAL_EVIDENCE: >
+        Claims curiosity, enthusiasm or willingness to learn without supporting
+        evidence.
+      NO_EVIDENCE_FOUND: Nothing identified.
+    rationale: >
+      Anchored in the spec's explicit statement that curiosity and technical
+      potential matter more than prior motorsport interest.
+
+  - criterion_id: E4
+    description: >
+      Values evidence: concrete examples consistent with the authorised
+      behaviours Accountable, Brave, Competitive, Selfless. Evidence for all
+      four is not required from a CV; assess the strength of behavioural
+      evidence available.
+    category: VALUES_BEHAVIOURS
+    essential: true
+    spec_source: "Demonstrate how your experiences … reflect our shared values: Accountable, Brave, Competitive and Selfless"
+    authorised_values: [Accountable, Brave, Competitive, Selfless]   # confirmed S4
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Several concrete examples demonstrating different relevant behaviours,
+        with the candidate's contribution clear.
+      EVIDENCE: >
+        At least one convincing example of behaviour aligned with the stated
+        values.
+      PARTIAL_EVIDENCE: Values or characteristics are asserted but not demonstrated.
+      NO_EVIDENCE_FOUND: No relevant behavioural evidence.
+    rationale: >
+      Spec essential criterion (verbatim coverage confirmed).
+
+  - criterion_id: D1
+    description: >
+      Applied CAD / 3D design experience: has applied CAD, 3D modelling or
+      another design tool to produce or develop engineering designs.
+    category: TECHNICAL_SKILL
+    essential: false
+    spec_source: "Experience using CAD, 3D modelling or other design tools."
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Recurring/substantial applied use across multiple projects, including
+        design development or iteration.
+      EVIDENCE: One clear project involving applied CAD/3D modelling.
+      PARTIAL_EVIDENCE: >
+        Software listed or proficiency self-declared without an applied example.
+      NO_EVIDENCE_FOUND: No evidence.
+    exclusions:
+      - >
+        Do NOT require CATIA specifically; any CAD/3D/design tool qualifies.
+        Self-declared proficiency without application caps at PARTIAL.
+        (Spec confirms: "CAD Proficiency: Hands-on experience with
+        industry-standard CAD tools (CATIA 3DX)…" is listed under Key skills you
+        will LEARN on placement.)
+    rationale: >
+      Spec desirable criterion (verbatim coverage confirmed).
+
+  - criterion_id: D2
+    description: >
+      Computational tools and process improvement: application of programming,
+      scripting, AI or other digital tools to solve a problem, automate work or
+      improve an engineering process.
+    category: DIGITAL_TOOLS
+    essential: false
+    spec_source: "Programming, scripting, practical use of AI tools, or experience improving engineering processes."
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: Multiple applied examples and tangible improvement/outcome.
+      EVIDENCE: One clear applied example.
+      PARTIAL_EVIDENCE: Language/tool listed without an application.
+      NO_EVIDENCE_FOUND: No evidence.
+    rationale: >
+      Spec desirable criterion (verbatim coverage confirmed).
+
+  - criterion_id: D3
+    description: >
+      Team contribution and collaboration: effective contribution within a team,
+      including working with others towards a shared technical or practical
+      outcome.
+    category: TEAMWORK
+    essential: false
+    spec_source: "An adaptable, proactive and collaborative approach, with the ability to contribute effectively in a team environment."
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Clear personal contribution plus evidence of working across roles/
+        disciplines or helping the wider team succeed.
+      EVIDENCE: Clear contribution to a collaborative project.
+      PARTIAL_EVIDENCE: Team membership stated without explaining their contribution.
+      NO_EVIDENCE_FOUND: Nothing located.
+    rationale: >
+      Spec desirable criterion (verbatim coverage confirmed).
+
+  - criterion_id: D4
+    description: >
+      Analytical rigour and attention to detail: a methodical approach to
+      analysing, testing, validating or improving technical work.
+    category: ANALYTICAL_RIGOUR
+    essential: false
+    spec_source: "Keen attention to detail, with an analytical and inquisitive approach."
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Several concrete examples involving analysis/validation, with conclusions
+        or resulting decisions.
+      EVIDENCE: One clear analytical or validation example.
+      PARTIAL_EVIDENCE: >
+        Self-description such as "analytical" or "attention to detail" without an
+        example.
+      NO_EVIDENCE_FOUND: Nothing located.
+    rationale: >
+      Spec desirable criterion (verbatim coverage confirmed).
+
+  - criterion_id: D5
+    description: >
+      Resilience, adaptability and improvement: effective response to setbacks,
+      changing requirements, unsuccessful approaches or feedback, and subsequent
+      learning or improvement.
+    category: RESILIENCE
+    essential: false
+    spec_source: "Determination and resilience when facing challenges, with an interest in continuous improvement."
+    weighting: null
+    evidence_expectation:
+      STRONG_EVIDENCE: >
+        Specific examples showing challenge/change, response and subsequent
+        improvement.
+      EVIDENCE: One credible example.
+      PARTIAL_EVIDENCE: >
+        Candidate describes themselves as resilient/adaptable without evidence.
+      NO_EVIDENCE_FOUND: Nothing located.
+    rationale: >
+      Spec desirable criterion (verbatim coverage confirmed).
+
+# -----------------------------------------------------------------------------
+# Framework-level assessment policy (S3 decision incorporated)
+# -----------------------------------------------------------------------------
+policy:
+  motorsport_interest: non_criterion   # spec: not required — never scored
+  placement_skills: non_criterion      # spec "Key skills you will learn" — never scored
+  academic_grades: context_only        # recorded, do not move bands
+  cover_letter_status: equal_source    # S3: CONFIRMED by owner 2026-10-28
+  missing_cover_letter: no_penalty     # packet metadata only, never an outcome
+  self_declared_proficiency: cap_at_partial   # listing/self-rating alone = PARTIAL
+  quantified_claims: recorded_not_privileged  # numbers don't add weight by themselves
+  sensitive_content: excluded          # redaction config, per plan §20
+  missing_evidence_rule: null_not_zero # NO_EVIDENCE_FOUND never scores 0
