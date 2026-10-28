@@ -1,0 +1,110 @@
+# Skill alias registry v0.1 — canonical names for tools/software named in the
+# corpus (plan §3.2 #6). Versioned: normalisation results always record the
+# registry version. New aliases are PROPOSED by the pipeline and curated by a
+# human before being added (plan §15) — never auto-extended.
+
+registry_version: "0.1.0"
+
+skills:
+  - id: SKILL-STAR-CCM-PLUS
+    canonical: "STAR-CCM+"
+    aliases: ["star-ccm+", "star ccm+", "starccm+", "starccm", "star ccm plus", "cd-adapco star-ccm+"]
+
+  - id: SKILL-ANSYS-FLUENT
+    canonical: "ANSYS Fluent"
+    aliases: ["ansys fluent", "fluent", "ansysfluent"]
+
+  - id: SKILL-ANSYS-MECHANICAL
+    canonical: "ANSYS Mechanical"
+    aliases: ["ansys mechanical", "ansys structural"]
+
+  - id: SKILL-ANSYS
+    canonical: "ANSYS (generic)"
+    aliases: ["ansys"]
+
+  - id: SKILL-CATIA-3DEXPERIENCE
+    canonical: "CATIA 3DEXPERIENCE"
+    aliases: ["catia 3dx", "catia 3dexperience", "catia v6", "3dexperience"]
+
+  - id: SKILL-CATIA-V5
+    canonical: "CATIA V5"
+    aliases: ["catia v5"]
+
+  - id: SKILL-CATIA
+    canonical: "CATIA (generic)"
+    aliases: ["catia"]
+
+  - id: SKILL-SIEMENS-NX
+    canonical: "Siemens NX"
+    aliases: ["siemens nx", "nx", "unigraphics"]
+
+  - id: SKILL-SOLIDWORKS
+    canonical: "SolidWorks"
+    aliases: ["solidworks", "solid works", "sw"]
+
+  - id: SKILL-FUSION-360
+    canonical: "Fusion 360"
+    aliases: ["fusion 360", "fusion360", "autodesk fusion"]
+
+  - id: SKILL-ONSHAPE
+    canonical: "Onshape"
+    aliases: ["onshape"]
+
+  - id: SKILL-AUTODESK-INVENTOR
+    canonical: "Autodesk Inventor"
+    aliases: ["autodesk inventor", "inventor"]
+
+  - id: SKILL-SIMSCALE
+    canonical: "SimScale"
+    aliases: ["simscale"]
+
+  - id: SKILL-ABAQUS
+    canonical: "Abaqus"
+    aliases: ["abaqus"]
+
+  - id: SKILL-MATLAB
+    canonical: "MATLAB"
+    aliases: ["matlab"]
+
+  - id: SKILL-SIMULINK
+    canonical: "Simulink"
+    aliases: ["simulink"]
+
+  - id: SKILL-PYTHON
+    canonical: "Python"
+    aliases: ["python"]
+
+  - id: SKILL-EXCEL
+    canonical: "Microsoft Excel"
+    aliases: ["excel", "microsoft excel", "ms excel"]
+
+  - id: SKILL-WORD
+    canonical: "Microsoft Word"
+    aliases: ["word", "microsoft word", "ms word"]
+
+  - id: SKILL-POWERPOINT
+    canonical: "Microsoft PowerPoint"
+    aliases: ["powerpoint", "microsoft powerpoint", "ms powerpoint"]
+
+  - id: SKILL-OPTIMUMK
+    canonical: "OptimumK"
+    aliases: ["optimumk", "optimum kinematics"]
+
+  - id: SKILL-DEWESOFTX
+    canonical: "DEWESoftX"
+    aliases: ["dewesoftx", "dewesoft"]
+
+  - id: SKILL-ARDUINO
+    canonical: "Arduino"
+    aliases: ["arduino"]
+
+  # capability tags (not tools, but normalised consistently for criteria mapping)
+  - id: SKILL-CAD
+    canonical: "CAD (capability)"
+    aliases: ["cad", "3d cad", "3d modelling", "3d modeling", "surface modelling", "surfacing"]
+  - id: SKILL-CFD
+    canonical: "CFD (capability)"
+    aliases: ["cfd", "computational fluid dynamics"]
+  - id: SKILL-FEA
+    canonical: "FEA (capability)"
+    aliases: ["fea", "finite element analysis", "fe analysis"]
