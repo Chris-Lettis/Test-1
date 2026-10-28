@@ -4,7 +4,8 @@ Evidence-first, criteria-authorised, human-gated review of candidate
 application packets. Architecture and implementation plan:
 [`docs/candidate-review-pipeline-plan.md`](docs/candidate-review-pipeline-plan.md).
 
-**Status:** Increment 1 complete — packet ingestion & provenance (plan §28).
+**Status:** Increments 1 + 3 complete — packet ingestion & provenance, plus the
+deterministic verification core (plan §28).
 
 ## Privacy
 
